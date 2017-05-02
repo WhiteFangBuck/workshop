@@ -25,6 +25,15 @@ val countTokens = udf { (words: Seq[String]) => words.length }
 val tokenized = tokenizer.transform(sentenceDataFrame)
     tokenized.select("sentence", "words")
       .withColumn("tokens", countTokens(col("words"))).show(false)
+ 
+var stopWordFile = "data/stopwords.txt"
+val stopwords = spark.sparkContext.textFile(stopWordFile).collect
+val filteredTokens = new StopWordsRemover()
+      .setStopWords(stopwords)
+      .setCaseSensitive(false)
+      .setInputCol("words")
+      .setOutputCol("filtered")
+      .transform(tokens)
 
 val regexTokenized = regexTokenizer.transform(sentenceDataFrame)
     regexTokenized.select("sentence", "words")
