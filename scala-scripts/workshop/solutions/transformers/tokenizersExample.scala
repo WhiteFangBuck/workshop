@@ -25,4 +25,8 @@ val countTokens = udf { (words: Seq[String]) => words.length }
 val tokenized = tokenizer.transform(sentenceDataFrame)
     tokenized.select("sentence", "words")
       .withColumn("tokens", countTokens(col("words"))).show(false)
+ 
+ val regexTokenized = regexTokenizer.transform(sentenceDataFrame)
+    regexTokenized.select("sentence", "words")
+      .withColumn("tokens", countTokens(col("words"))).show(false)
 }}
