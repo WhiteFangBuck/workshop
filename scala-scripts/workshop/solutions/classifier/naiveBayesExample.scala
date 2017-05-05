@@ -1,4 +1,5 @@
 import org.apache.spark.ml._
+import org.apache.spark.ml.feature._
 import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
 
 val rawText = spark.read.format("csv")
