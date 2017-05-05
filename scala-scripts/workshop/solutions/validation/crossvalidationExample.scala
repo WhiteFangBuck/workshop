@@ -40,7 +40,7 @@ val assembler = new VectorAssembler()
 val lr = new LinearRegression()
       .setLabelCol("price")
       .setFeaturesCol("features")
-      .setMaxIter(1000)
+      .setMaxIter(100)
       .setSolver("l-bfgs")
       .setTol(1E-10)
 
