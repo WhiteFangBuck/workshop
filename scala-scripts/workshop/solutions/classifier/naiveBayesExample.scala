@@ -37,6 +37,8 @@ val Array(train, test) = tfidf.randomSplit(Array(.8, .2), 102059L)
 val model = new NaiveBayes()
   .fit(train)
 
+val predictions = model.transform(test)
+
 val metrics = new BinaryClassificationEvaluator()
   .setLabelCol("label")
   .setRawPredictionCol("prediction")
