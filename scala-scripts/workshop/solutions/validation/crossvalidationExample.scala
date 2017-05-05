@@ -14,7 +14,7 @@ case class X(
                 bathrms: Double,stories: Double, driveway: String,recroom: String,
                 fullbase: String, gashw: String, airco: String, garagepl: Double, prefarea: String)
                 
-var input = "data/housing/Housing.csv"
+var input = "data/Housing.csv"
 
 val data = sc.textFile(input).map(_.split(","))
       .map( x => ( X(
