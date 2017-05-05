@@ -1,4 +1,4 @@
-import org.apache.spark.ml.classification.NaiveBayes
+import org.apache.spark.ml._
 import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
 
 val rawText = spark.read.format("csv")
