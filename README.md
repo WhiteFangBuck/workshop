@@ -1,4 +1,4 @@
-# Strata-2017-SAN-JOSE
+# OReilly-2017
 
 This tutorial can either be run in spark-shell or in an IDE (IntelliJ or Scala IDE for Eclipse)
 
