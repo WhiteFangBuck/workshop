@@ -1,4 +1,4 @@
-# OReilly-2017
+# OReilly-2018
 
 This tutorial can either be run in spark-shell or in an IDE (IntelliJ or Scala IDE for Eclipse)
 
